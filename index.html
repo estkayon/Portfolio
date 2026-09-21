@@ -3,300 +3,757 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description"
+        content="Portfolio of Md. Estiak Rahman Ayon, a Software Engineer and AI/ML and MLOps Engineer.">
 
-    <!-- =====BOX ICONS===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="author" content="Md. Estiak Rahman Ayon">
 
-    <title>MD Estiak Rahman Ayon</title>
+    <meta name="theme-color" content="#03050c">
+
+    <title>
+        Md. Estiak Rahman Ayon | Portfolio
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!--===== HEADER =====-->
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="#" class="nav__logo">Estiak Ayon</a>
-            </div>
+    <!-- Space background -->
+    <canvas id="space-canvas" aria-hidden="true"></canvas>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Projects & Papers</a></li>
-                    <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
-                    <li class="nav__item"><a href="#certificates" class="nav__link">Certificates</a></li>
-                    <!-- <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li> -->
-                </ul>
-            </div>
+    <div class="space-overlay" aria-hidden="true"></div>
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
-            </div>
+    <!-- Custom cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <div class="container header-container">
+            <a href="#home" class="brand" aria-label="Go to homepage">
+                <img src="assets/images/logo/ayon-logo.png" alt="Md. Estiak Rahman Ayon logo" class="brand-logo">
+
+                <span class="brand-name">Ayon</span>
+            </a>
+
+            <nav class="desktop-navigation" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#publication">Publication</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#volunteering">Volunteering</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <a href="#contact" class="header-button interactive">
+                Let’s talk
+            </a>
+
+            <button class="menu-button interactive" id="menu-button" type="button" aria-label="Open navigation menu"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#publication">Publication</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#volunteering">Volunteering</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main class="l-main">
+    <main>
+        <!-- Hero -->
+        <section class="hero-section container" id="home">
+            <div class="hero-content reveal">
+                <p class="section-label">
+                    <span></span>
+                    SOFTWARE ENGINEER | AI/ML ENGINEER | MLOPS ENGINEER
+                </p>
 
-        <!--===== HOME =====-->
-        <section class="home bd-grid" id="home">
-            <div class="home__data">
-                <h1 class="home__title">
-                    Hi,<br>
-                    I'm <span class="home__title-color">MD Estiak Rahman Ayon</span><br>
-                    Data Scientist
+                <h1>
+                    Building intelligent
+                    <em>systems</em> from
+                    data to deployment.
                 </h1>
-                <!-- Optional button -->
-                <!-- <a href="#contact" class="button">Contact Me</a> -->
-                <div class="home__buttons">
-                    <a href="assets/docs/Ayon_CV.pdf" target="_blank" class="button button--view">View CV</a>
-                    <a href="assets/docs/Ayon_CV.pdf" download class="button button--download">Download CV</a>
+
+                <p class="hero-description">
+                    I’m
+                    <strong>Md. Estiak Rahman Ayon</strong>,
+                    a Computer Science graduate from AIUB with experience
+                    in Machine Learning, MLOps, vision-language systems
+                    and full-stack software development.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="button primary-button interactive">
+                        Explore my projects
+                    </a>
+
+                    <a href="assets/files/Md_Estiak_Rahman_Ayon_CV.pdf" class="button secondary-button interactive"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-eye"></i>
+                        Preview CV
+                    </a>
+
+                    <a href="assets/files/Md_Estiak_Rahman_Ayon_CV.pdf" class="button secondary-button interactive"
+                        download>
+                        Download CV
+                    </a>
                 </div>
 
+
+
+                <div class="social-icon-list">
+                    <a href="https://github.com/estkayon" target="_blank" rel="noopener noreferrer"
+                        class="social-icon github interactive" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/md-estiak-rahman-ayon/" target="_blank"
+                        rel="noopener noreferrer" class="social-icon linkedin interactive" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/estiak.ayon99" target="_blank" rel="noopener noreferrer"
+                        class="social-icon facebook interactive" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/_ayooonx7/" target="_blank" rel="noopener noreferrer"
+                        class="social-icon instagram interactive" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="mailto:estiakayon@gmail.com" class="social-icon email interactive" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="home__img">
-                <svg class="home__blob" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <clipPath id="blob-clip">
-                            <path
-                                d="M63,288Q3,126,144,72Q285,18,384,120Q483,222,384,360Q285,498,144,432Q3,366,63,288Z" />
-                        </clipPath>
-                    </defs>
-                    <image href="assets/img/pf.jpg" width="480" height="480" clip-path="url(#blob-clip)"
-                        preserveAspectRatio="xMidYMid slice" />
-                </svg>
+            <!-- Profile picture with solar system -->
+            <div class="profile-system reveal">
+                <div class="profile-glow"></div>
+
+                <div class="solar-orbit orbit-one">
+                    <span class="planet planet-one"></span>
+                </div>
+
+                <div class="solar-orbit orbit-two">
+                    <span class="planet planet-two"></span>
+                </div>
+
+                <div class="solar-orbit orbit-three">
+                    <span class="planet planet-three"></span>
+                </div>
+
+                <div class="profile-photo-wrapper">
+                    <img src="assets/images/profile/ayon-profile.png" alt="Md. Estiak Rahman Ayon"
+                        class="profile-photo">
+                </div>
+
+                <div class="profile-status">
+                    <span></span>
+                    Available for opportunities
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-indicator">
+                <span></span>
+                SCROLL TO DISCOVER
+            </a>
+        </section>
+
+        <!-- About -->
+        <section class="content-section container" id="about">
+            <div class="section-heading reveal">
+                <p>01 / ABOUT</p>
+                <h2>Engineering with purpose.</h2>
+            </div>
+
+            <div class="about-layout">
+                <div class="about-description reveal">
+                    <p>
+                        Computer Science graduate from American International
+                        University-Bangladesh with experience in Machine
+                        Learning and Software Engineering.
+                    </p>
+
+                    <p>
+                        I work on practical software and AI projects with hands-on experience in full-stack development,
+                        machine learning pipelines, and MLOps workflows. I enjoy developing scalable applications,
+                        solving real-world engineering problems, and exploring modern AI technologies with a focus on
+                        building efficient and reliable solutions.
+
+                    </p>
+
+                </div>
+
+                <div class="about-sidebar">
+                    <article class="glass-card interactive-card reveal">
+                        <span>ACADEMIC INTEREST</span>
+
+                        <p>
+                            Artificial Intelligence • Machine Learning • Software Engineer
+                            • Data Science
+                        </p>
+                    </article>
+
+                    <article class="glass-card interactive-card reveal">
+                        <span>RESEARCH INTEREST</span>
+
+                        <p>
+                            Efficient Deep Learning • Computer Vision • Natural Language Processing • Vision-Language
+                            Models
+                        </p>
+                    </article>
+
+                    <article class="glass-card interactive-card reveal">
+                        <span>CAREER DIRECTION</span>
+
+                        <p>
+                            AI/ML Engineer • MLOps Engineer • Software Engineer
+                        </p>
+
+                    </article>
+                </div>
             </div>
         </section>
 
+        <!-- Experience -->
+        <section class="content-section container" id="experience">
+            <div class="section-heading centered-heading reveal">
+                <p>02 / EXPERIENCE</p>
+                <h2>Industry experience.</h2>
+            </div>
 
-        <!--===== ABOUT =====-->
-        <section class="about section " id="about">
-            <h2 class="section-title">About</h2>
-
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <img src="assets/img/profile1.jpg" alt="">
+            <article class="organization-card interactive-card reveal">
+                <div class="organization-logo">
+                    <img src="assets/images/organizations/walton-logo.png" alt="Walton Hi-Tech Industries PLC logo">
                 </div>
 
+                <div class="organization-information">
+                    <div class="organization-top">
+                        <div>
+                            <span class="organization-date">
+                                February 2026 – April 2026
+                            </span>
+
+                            <h3>Software Engineer Intern</h3>
+
+                            <h4>Walton Hi-Tech Industries PLC</h4>
+                        </div>
+
+                        <span class="status-badge">
+                            COMPLETED
+                        </span>
+                    </div>
+
+                    <p class="organization-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Gazipur, Bangladesh
+                    </p>
+
+                    <ul>
+                        <li>
+                            Built and maintained internal web applications
+                            for manufacturing operations using PHP and MySQL.
+                        </li>
+
+                        <li>
+                            Implemented role-based access control and
+                            approval workflows for different departments.
+                        </li>
+
+                        <li>
+                            Developed responsive interfaces using JavaScript
+                            and Bootstrap.
+                        </li>
+
+                        <li>
+                            Gathered requirements from production-line
+                            operators and demonstrated released features.
+                        </li>
+                    </ul>
+
+                    <a href="https://www.waltonhil.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-link interactive">
+                        Visit organization
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Projects -->
+        <section class="content-section container" id="projects">
+            <div class="section-heading heading-with-description reveal">
                 <div>
-                    <!-- <h2 class="about__subtitle">I am Ayon,</h2> -->
-                    <p class="about__text">I’m MD Estiak Rahman Ayon, a Computer Science graduate passionate about Data Science and Data Analytics, as well as creating interactive web applications. I continuously focus on learning, exploring areas such as data analysis, data visualization, machine learning, and front-end development, and I enjoy solving complex problems with practical and innovative approaches.</p>
+                    <p>03 / SELECTED PROJECTS</p>
+                    <h2>Things I’ve built.</h2>
+                </div>
+
+                <span>
+                    View the complete project details or open
+                    the GitHub repository.
+                </span>
+            </div>
+
+            <div class="project-grid" id="project-grid"></div>
+        </section>
+
+        <!-- Publication -->
+        <section class="content-section container" id="publication">
+            <div class="section-heading reveal">
+                <p>04 / PUBLICATION</p>
+                <h2>Research work.</h2>
+            </div>
+
+            <article class="publication-card interactive-card reveal">
+                <div class="publication-status">
+                    <span></span>
+                    ONGOING · MANUSCRIPT IN PREPARATION
+                </div>
+
+                <h3>
+                    BanglaCXR: A Two-Stage Vision-Language Pipeline
+                    for Bangla Chest X-Ray Radiology Report Generation
+                </h3>
+
+                <p>
+                    An undergraduate thesis focused on generating
+                    chest X-ray radiology reports in clinical Bangla
+                    using an efficient two-stage vision-language pipeline.
+                </p>
+
+                <div class="publication-details">
+                    <div>
+                        <span>RESEARCH AREA</span>
+                        <p>Computer Vision and Natural Language Processing</p>
+                    </div>
+
+                    <div>
+                        <span>MODEL ARCHITECTURE</span>
+                        <p>RAD-DINO, Phi-3.5 Mini and NLLB-200</p>
+                    </div>
+
+                    <div>
+                        <span>MODEL EFFICIENCY</span>
+                        <p>4-bit QLoRA on a single 8 GB GPU</p>
+                    </div>
+
+                    <div>
+                        <span>PERFORMANCE</span>
+                        <p>0.8882 F1 and 0.9795 recall</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Skills -->
+        <section class="content-section container" id="skills">
+            <div class="section-heading reveal">
+                <p>05 / SKILLS</p>
+                <h2>Technical expertise.</h2>
+            </div>
+
+            <div class="skill-category-grid" id="skill-category-grid"></div>
+
+            <p class="skill-percentage-note reveal">
+                90% represents technologies used in projects or professional work.
+                80% represents technologies currently being learned or explored.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="content-section container" id="education">
+            <div class="section-heading centered-heading reveal">
+                <p>06 / EDUCATION</p>
+                <h2>Academic foundation.</h2>
+            </div>
+
+            <div class="organization-list">
+                <article class="organization-card interactive-card reveal">
+                    <div class="organization-logo">
+                        <img src="assets/images/organizations/aiub-logo.png"
+                            alt="American International University-Bangladesh logo">
+                    </div>
+
+                    <div class="organization-information">
+                        <span class="organization-date">
+                            September 2022 – August 2026
+                        </span>
+
+                        <span class="status-badge education-status">
+                            COMPLETED
+                        </span>
+
+                        <h3>
+                            Bachelor of Science in Computer Science
+                            and Engineering
+                        </h3>
+
+                        <h4>
+                            American International University-Bangladesh (AIUB)
+                        </h4>
+
+
+
+                        <a href="https://www.aiub.edu/" target="_blank" rel="noopener noreferrer"
+                            class="text-link interactive">
+                            Visit university
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="organization-card interactive-card reveal">
+                    <div class="organization-logo">
+                        <img src="assets/images/organizations/sipc-logo.png"
+                            alt="Shafipur Ideal Public School and College logo">
+                    </div>
+
+                    <div class="organization-information">
+                        <span class="organization-date">
+                            June 2019 – February 2021
+                        </span>
+
+                        <span class="status-badge education-status">
+                            COMPLETED
+                        </span>
+
+
+                        <h3>Higher Secondary Certificate</h3>
+
+                        <h4>
+                            Shafipur Ideal Public School & College (SIPC)
+                        </h4>
+
+
+                        <a href="https://www.sipc.edu.bd/" target="_blank" rel="noopener noreferrer"
+                            class="text-link interactive">
+                            Visit institution
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Certificates -->
+        <section class="content-section certificate-section" id="certificates">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p>07 / CERTIFICATES</p>
+                    <h2>Credentials and learning.</h2>
+                </div>
+            </div>
+
+            <div class="certificate-slider">
+                <div class="certificate-track" id="certificate-track">
+
+                    <!-- Original certificates -->
+
+                    <article class="certificate-item interactive">
+                        <img src="assets/images/certificates/certificate-1.jpg" alt="Certificate 1">
+
+                        <button class="certificate-view-button" type="button" aria-label="View Certificate 1">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive">
+                        <img src="assets/images/certificates/certificate-2.jpg" alt="Certificate 2">
+
+                        <button class="certificate-view-button" type="button" aria-label="View Certificate 2">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive">
+                        <img src="assets/images/certificates/certificate-3.jpg" alt="Certificate 3">
+
+                        <button class="certificate-view-button" type="button" aria-label="View Certificate 3">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive">
+                        <img src="assets/images/certificates/certificate-4.jpg" alt="Certificate 4">
+
+                        <button class="certificate-view-button" type="button" aria-label="View Certificate 4">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive">
+                        <img src="assets/images/certificates/certificate-5.jpg" alt="Certificate 5">
+
+                        <button class="certificate-view-button" type="button" aria-label="View Certificate 5">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <!-- Duplicated certificates for continuous animation -->
+
+                    <article class="certificate-item interactive" aria-hidden="true">
+                        <img src="assets/images/certificates/certificate-1.jpg" alt="">
+
+                        <button class="certificate-view-button" type="button" tabindex="-1" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive" aria-hidden="true">
+                        <img src="assets/images/certificates/certificate-2.jpg" alt="">
+
+                        <button class="certificate-view-button" type="button" tabindex="-1" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive" aria-hidden="true">
+                        <img src="assets/images/certificates/certificate-3.jpg" alt="">
+
+                        <button class="certificate-view-button" type="button" tabindex="-1" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive" aria-hidden="true">
+                        <img src="assets/images/certificates/certificate-4.jpg" alt="">
+
+                        <button class="certificate-view-button" type="button" tabindex="-1" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
+
+                    <article class="certificate-item interactive" aria-hidden="true">
+                        <img src="assets/images/certificates/certificate-5.jpg" alt="">
+
+                        <button class="certificate-view-button" type="button" tabindex="-1" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>View Details</span>
+                        </button>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!--===== SKILLS =====-->
-        <section class="skills section" id="skills">
-            <h2 class="section-title">Skills</h2>
+        <!-- Volunteering -->
 
-            <div class="skills__container">
-                <!-- Programming Languages -->
-                <div class="skills__item">Python</div>
-                <div class="skills__item">PHP</div>
-                <div class="skills__item">C++</div>
-                <div class="skills__item">C#</div>
-                <div class="skills__item">JavaScript</div>
-                <div class="skills__item">CSS</div>
-
-                <!-- Frameworks & Libraries -->
-                <div class="skills__item">React.js</div>
-                <div class="skills__item">Tailwind CSS</div>
-                <div class="skills__item">AJAX</div>
-                <div class="skills__item">OpenGL</div>
-
-                <!-- Data Science Tools -->
-                <div class="skills__item">Pandas</div>
-                <div class="skills__item">NumPy</div>
-                <div class="skills__item">Matplotlib</div>
-                <div class="skills__item">Scikit-learn</div>
-
-                <!-- Core Competencies -->
-                <div class="skills__item">Front-End Web Development</div>
-                <div class="skills__item">Data Visualization & Analysis</div>
-                <div class="skills__item">Data Cleaning & Preprocessing</div>
-                <div class="skills__item">Machine Learning Model Development</div>
-                <div class="skills__item">Database Management (MySQL)</div>
+        <section class="content-section container" id="volunteering">
+            <div class="section-heading reveal">
+                <p>08 / VOLUNTEERING</p>
+                <h2>Community involvement.</h2>
             </div>
+
+            <article class="volunteering-card interactive-card reveal">
+                <div class="volunteering-logo">
+                    <img src="assets/images/organizations/bd-clean-logo.png" alt="BD Clean organization logo">
+                </div>
+
+                <div class="volunteering-content">
+                    <div class="volunteering-top">
+                        <div>
+                            <span class="volunteering-date">
+                                7 November 2023 – 8 November 2023
+                            </span>
+
+                            <h3>Community Volunteer</h3>
+
+                            <h4>BD Clean</h4>
+                        </div>
+
+                        <span class="volunteering-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Gazipur, Bangladesh
+                        </span>
+                    </div>
+
+                    <ul>
+                        <li>
+                            Participated in grassroots public cleanliness and
+                            environmental initiatives across Gazipur.
+                        </li>
+
+                        <li>
+                            Helped promote responsible civic waste management
+                            and sustainable hygiene practices.
+                        </li>
+
+                        <li>
+                            Collaborated with regional volunteer teams to
+                            coordinate community clean-up initiatives.
+                        </li>
+                    </ul>
+
+                    <a href="https://drive.google.com/file/d/1xzfM2rAlEWN-26Nfm0irVmVscT09XaVx/view" target="_blank"
+                        rel="noopener noreferrer" class="text-link interactive">
+                        View volunteering evidence
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </article>
         </section>
 
+        <!-- Contact -->
+        <section class="content-section contact-section container" id="contact">
+            <p class="section-label reveal">
+                <span></span>
+                GET IN TOUCH
+            </p>
 
+            <h2 class="reveal">
+                Have an opportunity<br>
+                or an idea?
+                <em>Let’s talk.</em>
+            </h2>
 
-        <section class="projects section" id="projects">
-            <h2 class="section-title">Projects & Papers</h2>
+            <p class="contact-description reveal">
+                I am interested in Software Engineering, AI/ML,
+                MLOps, research and postgraduate opportunities.
+            </p>
 
-            <div class="projects__container bd-grid">
+            <a href="mailto:estiakayon@gmail.com" class="contact-email interactive reveal">
+                estiakayon@gmail.com
+                <span>↗</span>
+            </a>
 
-                <div class="projects__item">
-                    <h3 class="projects__title">🍽️ Restaurant Management System</h3>
-                    <p class="projects__desc">A full-featured restaurant management system with dashboards for
-                        customers, admins, and riders with live updates and secure sessions.</p>
-                    <div class="projects__languages">
-                        <span class="language__card">PHP</span>
-                        <span class="language__card">JavaScript</span>
-                        <span class="language__card">CSS</span>
-                        <span class="language__card">AJAX</span>
-                        <span class="language__card">MySQL</span>
-                    </div>
-                </div>
-
-                <div class="projects__item">
-                    <h3 class="projects__title">🏧 ATM Management System</h3>
-                    <p class="projects__desc">A desktop-based ATM simulator handling authentication, withdrawals,
-                        deposits, and balance tracking efficiently.</p>
-                    <div class="projects__languages">
-                        <span class="language__card">C#</span>
-                        <span class="language__card">MySQL</span>
-                    </div>
-                </div>
-
-                <div class="projects__item">
-                    <h3 class="projects__title">🎮 Tic Tac Toe game</h3>
-                    <p class="projects__desc">A fun and competitive Tic Tac Toe game offering smooth turns, quick
-                        responses, and instant winner updates.</p>
-                    <div class="projects__languages">
-                        <span class="language__card">JavaScript</span>
-                        <span class="language__card">CSS</span>
-                    </div>
-                </div>
-
-                <div class="projects__item">
-                    <h3 class="projects__title">🎮 Rock Paper Scissors game</h3>
-                    <p class="projects__desc">An engaging Rock Paper Scissors game that delivers instant results,
-                        playful animations, and a fast-paced challenge.</p>
-                    <div class="projects__languages">
-                        <span class="language__card">JavaScript</span>
-                        <span class="language__card">CSS</span>
-                    </div>
-                </div>
-
-                <div class="projects__item">
-                    <h3 class="projects__title">✈️ Airport Animation Visualization</h3>
-                    <p class="projects__desc">A 3D animated airport simulation featuring aircraft movement, landings,
-                        and weather effects with synchronized rendering.</p>
-                    <div class="projects__languages">
-                        <span class="language__card">C++</span>
-                        <span class="language__card">OpenGL</span>
-                    </div>
-                </div>
-
-                <div class="projects__item">
-                    <h3 class="projects__title">📊 Loan Default Prediction Using ML (Paper)</h3>
-                    <p class="projects__desc">Developed ML models to predict bank loan defaults using feature
-                        engineering and real-world financial datasets.</p>
-                    <div class="projects__languages">
-                        <span class="language__card">Python</span>
-                        <span class="language__card">Pandas</span>
-                        <span class="language__card">Scikit-learn</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!--===== EDUCATION =====-->
-        <section class="education section" id="education">
-            <h2 class="section-title">🎓 Education</h2>
-
-            <div class="education__container">
-                <div class="education__card">
-                    <h3 class="education__degree">B.Sc. in Computer Science & Engineering</h3>
-                    <p class="education__institute">American International University Bangladesh</p>
-                    <p class="education__year">2022 – Present</p>
-                </div>
-
-                <div class="education__card">
-                    <h3 class="education__degree">Higher Secondary Certificate (HSC)</h3>
-                    <p class="education__institute">Shafipur Ideal Public College</p>
-                    <p class="education__year">2021</p>
-                </div>
-
-                <div class="education__card">
-                    <h3 class="education__degree">Secondary School Certificate (SSC)</h3>
-                    <p class="education__institute">Shafipur Ideal Public School</p>
-                    <p class="education__year">2019</p>
-                </div>
-            </div>
-        </section>
-
-
-        <!--===== Certificates =====-->
-        <section class="work section" id="certificates">
-            <h2 class="section-title">Certificates</h2>
-
-            <div class="work__container bd-grid">
-                <a href="" class="work__img">
-                    <img src="assets/img/c1.jpg" alt="">
+            <div class="social-icon-list contact-social-icons reveal">
+                <a href="https://github.com/estkayon" target="_blank" rel="noopener noreferrer"
+                    class="social-icon github interactive" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/c2.jpg" alt="">
+
+                <a href="https://www.linkedin.com/in/md-estiak-rahman-ayon/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon linkedin interactive" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/c3.jpg" alt="">
+
+                <a href="https://www.facebook.com/estiak.ayon99" target="_blank" rel="noopener noreferrer"
+                    class="social-icon facebook interactive" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/c4.jpg" alt="">
+
+                <a href="https://www.instagram.com/_ayooonx7/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon instagram interactive" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/c5.jpg" alt="">
+
+                <a href="mailto:estiakayon@gmail.com" class="social-icon email interactive" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
                 </a>
-                <!-- <a href="" class="work__img">
-                    <img src="assets/img/work6.jpg" alt="">
-                </a> -->
+
+                <a href="assets/files/Md_Estiak_Rahman_Ayon_CV.pdf" class="social-icon cv interactive"
+                    aria-label="Download CV" download>
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                </a>
             </div>
         </section>
+    </main>
 
-        <!-- ===== CONTACT =====
-        <section class="contact section" id="contact">
-            <h2 class="section-title">Contact</h2>
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>
+                © <span id="current-year"></span>
+                Md. Estiak Rahman Ayon
+            </p>
 
-            <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Enviar" class="contact__button button">
-                </form>
-            </div>
-        </section>
-    </main> -->
+            <a href="#home">
+                BACK TO TOP ↑
+            </a>
+        </div>
+    </footer>
 
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Estiak Ayon</p>
+    <!-- Project details modal -->
+    <dialog class="project-dialog" id="project-dialog">
+        <button class="dialog-close-button interactive" id="dialog-close-button" type="button"
+            aria-label="Close project details">
+            ×
+        </button>
 
-            <div class="footer__contact">
-                <p>📧 <a href="mailto:estiakayon@gmail.com" class="footer__link">estiakayon@gmail.com</a></p>
-                <p>📞 <a href="tel:+8801704617747" class="footer__link">+880 1704-617747</a></p>
-            </div>
+        <p class="dialog-project-type" id="dialog-project-type"></p>
 
-            <div class="footer__social">
-                <a href="https://www.facebook.com/estiak.ayon99/" target="_blank" class="footer__icon"><i
-                        class='bx bxl-facebook'></i></a>
-                <a href="https://www.instagram.com/_ayooonx7/" target="_blank" class="footer__icon"><i
-                        class='bx bxl-instagram'></i></a>
-                <a href="https://github.com/EstiakAyon99" target="_blank" class="footer__icon"><i
-                        class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/md-estiak-rahman-ayon/" class="footer__icon"><i
-                        class='bx bxl-linkedin'></i></a>
-                <a href="https://wa.me/+8801704617747" target="_blank" class="footer__icon"><i
-                        class='bx bxl-whatsapp'></i></a>
+        <h2 id="dialog-project-title"></h2>
+
+        <p class="dialog-description" id="dialog-project-description"></p>
+
+        <div class="dialog-information">
+            <div>
+                <span>DATE</span>
+                <p id="dialog-project-date"></p>
             </div>
 
-            <p class="footer__copy">&#169; All rights reserved to MD Estiak Rahman Ayon</p>
-        </footer>
+            <div>
+                <span>ROLE</span>
+                <p id="dialog-project-role"></p>
+            </div>
+
+            <div>
+                <span>TECHNOLOGIES</span>
+                <p id="dialog-project-technologies"></p>
+            </div>
+        </div>
+
+        <h3>Project Details</h3>
+
+        <ul id="dialog-project-details"></ul>
+    </dialog>
+
+    <!-- Certificate sliding -->
+    <div class="certificate-lightbox" id="certificate-lightbox" role="dialog" aria-modal="true"
+        aria-label="Certificate preview" aria-hidden="true">
+        <button class="certificate-lightbox-close interactive" id="certificate-lightbox-close" type="button"
+            aria-label="Close certificate preview">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="certificate-lightbox-content">
+            <img src="" alt="" id="certificate-lightbox-image">
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 
 
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
-
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

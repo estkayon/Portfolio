@@ -1510,7 +1510,9 @@ h1 em,
         border-color 0.35s ease,
         box-shadow 0.35s ease,
         background-color 0.35s ease;
+    margin-top: 24px;
 }
+
 
 .project-card::before,
 .organization-card::before,
@@ -2342,4 +2344,25 @@ body.certificate-lightbox-open {
 
 .hero-buttons .button {
     gap: 8px;
+}
+
+.project-actions.three-actions {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.live-demo-button {
+    border-color: rgba(149, 239, 117, 0.4);
+    color: var(--green);
+}
+
+.live-demo-button:hover {
+    border-color: var(--green);
+    color: var(--green);
+    box-shadow: 0 0 18px rgba(149, 239, 117, 0.25);
+}
+
+@media (max-width: 620px) {
+    .project-actions.three-actions {
+        grid-template-columns: 1fr;
+    }
 }

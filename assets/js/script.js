@@ -3,6 +3,45 @@
    ===================================================== */
 
 const projects = [
+    
+    {
+    title: "Bangladesh Electricity Demand Forecasting",
+    type: "END-TO-END MLOPS PROJECT",
+    date: "September 2026",
+    role: "Machine Learning and MLOps Engineer",
+
+    description:
+        "A production-oriented electricity demand forecasting system for Bangladesh with automated data pipelines, national and regional forecasting, model tracking, API serving and a live dashboard.",
+
+    technologies: [
+        "Python",
+        "Scikit-learn",
+        "DVC",
+        "MLflow",
+        "DagsHub",
+        "FastAPI",
+        "Streamlit",
+        "Docker",
+        "GitHub Actions",
+        "Render"
+    ],
+
+    details: [
+        "Built national and regional electricity demand forecasting pipelines using BPDB demand data and Open-Meteo weather data.",
+        "Developed and evaluated time-series ML models, achieving 4.89% mean CV MAPE and 5.68% holdout MAPE for national forecasting.",
+        "Implemented automated data collection, preprocessing, feature engineering, DVC versioning and scheduled forecast refresh workflows.",
+        "Deployed the forecasting API with FastAPI and Render, along with a public Streamlit dashboard for live, extended and historical forecasts."
+    ],
+
+    github:
+        "https://github.com/estkayon/Bangladesh-Electricity-Demand-Forecasting-MLOps",
+
+    liveDemo:
+        "https://bd-electricity-demand-forecast.streamlit.app/",
+
+},
+    
+    
     {
         title: "Sentiment Analysis System",
         type: "END-TO-END MLOPS PROJECT",
@@ -484,7 +523,11 @@ function renderProjects() {
                 ${technologyTags}
             </div>
 
-            <div class="project-actions">
+            
+
+            <div class="project-actions ${
+                project.liveDemo ? "three-actions" : ""
+            }">
                 <button
                     class="project-action details-button interactive"
                     type="button"
@@ -502,6 +545,22 @@ function renderProjects() {
                     <i class="fa-brands fa-github"></i>
                     GitHub
                 </a>
+
+                ${
+                    project.liveDemo
+                        ? `
+                            <a
+                                href="${project.liveDemo}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-action live-demo-button interactive"
+                            >
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                        `
+                        : ""
+                }
             </div>
         `;
 

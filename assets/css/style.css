@@ -2366,3 +2366,963 @@ body.certificate-lightbox-open {
         grid-template-columns: 1fr;
     }
 }
+
+
+.desktop-navigation a,
+.mobile-navigation a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.desktop-navigation a::after,
+.mobile-navigation a::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(81, 216, 255, 0.8);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.desktop-navigation a:hover::after,
+.desktop-navigation a:focus-visible::after,
+.desktop-navigation a.active::after,
+.mobile-navigation a:hover::after,
+.mobile-navigation a:focus-visible::after,
+.mobile-navigation a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.publication-github-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 28px;
+    border: 1px solid var(--border);
+    padding: 11px 18px;
+    color: var(--primary-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.publication-github-button:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 18px rgba(81, 216, 255, 0.25);
+}
+
+.publication-github-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* =====================================================
+   FINAL RESPONSIVE OVERRIDES
+   Keep this block at the very bottom of style.css
+   ===================================================== */
+
+/* Prevent long content from creating horizontal overflow */
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+.project-card,
+.organization-card,
+.publication-card,
+.skill-category-card,
+.volunteering-card {
+    min-width: 0;
+}
+
+.organization-information,
+.volunteering-content,
+.skill-identity {
+    min-width: 0;
+}
+
+.organization-information h3,
+.volunteering-content h3,
+.project-card h3,
+.publication-card h3,
+.contact-email {
+    overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .mobile-navigation {
+        max-height: calc(100dvh - var(--header-height) - 20px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-section {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding-top: calc(var(--header-height) + 70px);
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .profile-system {
+        width: min(460px, 85vw);
+    }
+}
+
+/* Tablet and large phones */
+@media (max-width: 800px) {
+    .container {
+        width: min(100% - 36px, 1180px);
+    }
+
+    .content-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .section-heading h2,
+    .contact-section h2 {
+        font-size: clamp(2.2rem, 9vw, 3.7rem);
+    }
+
+    .heading-with-description {
+        align-items: flex-start;
+    }
+
+    .about-layout {
+        gap: 35px;
+    }
+
+    /* Experience and education */
+    .organization-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px;
+    }
+
+    .organization-logo {
+        width: 110px;
+        height: 110px;
+        margin-inline: auto;
+    }
+
+    .organization-information {
+        width: 100%;
+        text-align: center;
+    }
+
+    .organization-information ul {
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .organization-top {
+        display: block;
+    }
+
+    .education-status {
+        top: 20px;
+        right: 20px;
+        margin-top: 0;
+    }
+
+    /* Projects */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 390px;
+    }
+
+    /* Publication */
+    .publication-card {
+        padding: 32px;
+    }
+
+    .publication-details {
+        grid-template-columns: 1fr;
+    }
+
+    /* Skills */
+    .skill-category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Volunteering */
+    .volunteering-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .volunteering-logo {
+        width: 105px;
+        height: 105px;
+        margin-inline: auto;
+    }
+
+    .volunteering-top {
+        display: block;
+    }
+
+    .volunteering-location {
+        display: block;
+        margin-top: 12px;
+    }
+
+    .volunteering-content ul {
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    /* Project popup */
+    .project-dialog {
+        width: calc(100% - 28px);
+        max-height: 90dvh;
+        padding: 38px 26px 28px;
+    }
+
+    .project-dialog h2 {
+        padding-right: 24px;
+        font-size: clamp(1.7rem, 7vw, 2.3rem);
+    }
+
+    .dialog-information {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+/* Phones */
+@media (max-width: 620px) {
+    :root {
+        --header-height: 72px;
+    }
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .header-container {
+        gap: 12px;
+    }
+
+    .brand-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .brand-name {
+        font-size: 0.95rem;
+    }
+
+    .menu-button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .mobile-navigation {
+        top: var(--header-height);
+        right: 14px;
+        left: 14px;
+        grid-template-columns: 1fr;
+        padding: 14px;
+    }
+
+    .mobile-navigation a {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        padding: 10px 8px;
+    }
+
+    /* Hero */
+    .hero-section {
+        gap: 38px;
+        padding-top: calc(var(--header-height) + 55px);
+        padding-bottom: 75px;
+    }
+
+    h1 {
+        font-size: clamp(2.7rem, 13vw, 4rem);
+        letter-spacing: -0.055em;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    /* Solar profile system */
+    .profile-system {
+        width: min(350px, 100%);
+        aspect-ratio: 1;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        transform: none;
+    }
+
+    .profile-photo-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orbit-one {
+        width: 230px;
+        height: 230px;
+    }
+
+    .orbit-two {
+        width: 285px;
+        height: 285px;
+    }
+
+    .orbit-three {
+        width: min(340px, 94vw);
+        height: min(340px, 94vw);
+    }
+
+    .profile-status {
+        right: auto;
+        bottom: 5px;
+        left: 50%;
+        max-width: calc(100% - 20px);
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    /* General sections */
+    .content-section {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2,
+    .contact-section h2 {
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .about-description p:first-child {
+        font-size: 1.45rem;
+    }
+
+    .glass-card {
+        padding: 19px;
+    }
+
+    /* Experience and education */
+    .organization-card {
+        gap: 20px;
+        padding: 24px 20px;
+    }
+
+    .organization-logo {
+        width: 95px;
+        height: 95px;
+        border-radius: 19px;
+    }
+
+    .organization-information h3 {
+        font-size: 1.45rem;
+    }
+
+    .organization-information ul {
+        padding-left: 18px;
+    }
+
+    .education-status {
+        top: 15px;
+        right: 15px;
+        font-size: 0.55rem;
+    }
+
+    /* Projects */
+    .project-card {
+        min-height: 0;
+        padding: 24px 20px;
+    }
+
+    .project-card h3 {
+        margin-top: 30px;
+        font-size: 1.45rem;
+    }
+
+    .project-actions,
+    .project-actions.three-actions {
+        grid-template-columns: 1fr;
+        padding-top: 26px;
+    }
+
+    .project-action {
+        min-height: 45px;
+    }
+
+    /* Publication */
+    .publication-card {
+        padding: 25px 20px;
+    }
+
+    .publication-status {
+        align-items: flex-start;
+        line-height: 1.6;
+    }
+
+    .publication-status span {
+        flex: 0 0 auto;
+        margin-top: 4px;
+    }
+
+    .publication-card h3 {
+        margin-top: 22px;
+        font-size: 1.55rem;
+    }
+
+    .publication-details {
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .publication-details > div {
+        padding: 15px;
+    }
+
+    .publication-github-button {
+        width: 100%;
+    }
+
+    /* Skills */
+    .skill-category-card {
+        padding: 20px 16px;
+    }
+
+    .skill-category-heading {
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .skill-category-heading h3 {
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .skill-count {
+        display: none;
+    }
+
+    .skill-main {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .skill-name {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .skill-value {
+        flex: 0 0 auto;
+    }
+
+    /* Certificates */
+    .certificate-slider {
+        padding: 25px 0 50px;
+    }
+
+    .certificate-track {
+        gap: 16px;
+    }
+
+    .certificate-item {
+        width: min(82vw, 330px);
+    }
+
+    .certificate-view-button {
+        inset: auto 14px 14px;
+        flex-direction: row;
+        padding: 11px 14px;
+        border-color: rgba(81, 216, 255, 0.45);
+        background: rgba(3, 8, 18, 0.82);
+        opacity: 1;
+    }
+
+    .certificate-view-button i,
+    .certificate-view-button span {
+        font-size: 0.75rem;
+        transform: none;
+    }
+
+    .certificate-lightbox {
+        padding: 75px 10px 20px;
+    }
+
+    .certificate-lightbox-content {
+        width: 100%;
+        max-height: 78dvh;
+    }
+
+    .certificate-lightbox-content img {
+        max-height: 78dvh;
+    }
+
+    /* Volunteering */
+    .volunteering-card {
+        gap: 20px;
+        padding: 24px 20px;
+    }
+
+    .volunteering-logo {
+        width: 95px;
+        height: 95px;
+        border-radius: 19px;
+    }
+
+    .volunteering-content h3 {
+        font-size: 1.45rem;
+    }
+
+    .volunteering-content ul {
+        padding-left: 18px;
+    }
+
+    #volunteering .volunteering-card + .volunteering-card {
+        margin-top: 24px;
+    }
+
+    /* Contact and footer */
+    .contact-email {
+        max-width: 100%;
+        font-size: 0.95rem;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-social-icons {
+        flex-wrap: wrap;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Project popup */
+    .project-dialog {
+        width: calc(100% - 20px);
+        max-height: 92dvh;
+        padding: 42px 18px 24px;
+    }
+
+    .dialog-close-button {
+        top: 5px;
+        right: 13px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 22px);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile-system {
+        width: 310px;
+        max-width: 100%;
+    }
+
+    .profile-photo-wrapper {
+        width: 165px;
+        height: 165px;
+    }
+
+    .orbit-one {
+        width: 210px;
+        height: 210px;
+    }
+
+    .orbit-two {
+        width: 260px;
+        height: 260px;
+    }
+
+    .orbit-three {
+        width: 305px;
+        height: 305px;
+    }
+
+    .organization-card,
+    .volunteering-card,
+    .publication-card,
+    .project-card {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+}
+
+/* Touchscreen devices */
+@media (hover: none), (pointer: coarse) {
+    body,
+    a,
+    button,
+    .certificate-item,
+    .certificate-view-button,
+    .certificate-lightbox-close {
+        cursor: auto;
+    }
+
+    .cursor-dot,
+    .cursor-ring {
+        display: none !important;
+    }
+
+    .interactive-card:hover,
+    .project-card:hover,
+    .organization-card:hover,
+    .publication-card:hover,
+    .volunteering-card:hover,
+    .skill-category-card:hover {
+        transform: none;
+    }
+
+    .certificate-item:hover {
+        transform: none;
+    }
+
+    .project-action,
+    .button,
+    .publication-github-button,
+    .social-icon {
+        min-height: 44px;
+    }
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* =====================================================
+   DARK AND LIGHT THEME
+   ===================================================== */
+
+html {
+    color-scheme: dark;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+
+    --background: #f4f8fc;
+    --background-soft: #ffffff;
+
+    --surface: rgba(255, 255, 255, 0.84);
+    --surface-solid: #ffffff;
+
+    --primary-text: #102033;
+    --secondary-text: #46576a;
+    --muted-text: #718096;
+
+    --accent: #087fa8;
+    --accent-light: #0ea5d4;
+    --purple: #7047d7;
+    --green: #258c4d;
+
+    --border: rgba(15, 35, 55, 0.14);
+    --accent-border: rgba(8, 127, 168, 0.48);
+}
+
+/* Theme toggle button */
+
+.theme-toggle {
+    position: relative;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--accent);
+    font-size: 1rem;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px) rotate(12deg);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow:
+        0 0 16px rgba(81, 216, 255, 0.4),
+        inset 0 0 12px rgba(81, 216, 255, 0.08);
+}
+
+.theme-toggle i {
+    position: absolute;
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+}
+
+.theme-sun {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+.theme-moon {
+    opacity: 0;
+    transform: scale(0.4) rotate(-90deg);
+}
+
+html[data-theme="light"] .theme-sun {
+    opacity: 0;
+    transform: scale(0.4) rotate(90deg);
+}
+
+html[data-theme="light"] .theme-moon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* Smooth theme transition */
+
+body,
+.site-header,
+.mobile-navigation,
+.project-card,
+.organization-card,
+.publication-card,
+.skill-category-card,
+.volunteering-card,
+.glass-card,
+.social-icon,
+.project-dialog,
+.profile-status {
+    transition:
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        color 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.45s ease;
+}
+
+/* Light background */
+
+html[data-theme="light"] #space-canvas {
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(39, 153, 206, 0.17),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(124, 90, 220, 0.12),
+            transparent 34%
+        ),
+        #f4f8fc;
+}
+
+html[data-theme="light"] .space-overlay {
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(244, 248, 252, 0.12) 55%,
+            rgba(244, 248, 252, 0.55) 100%
+        );
+}
+
+/* Header */
+
+html[data-theme="light"] .site-header.scrolled {
+    border-color: var(--border);
+    background: rgba(244, 248, 252, 0.88);
+    box-shadow: 0 8px 30px rgba(28, 55, 80, 0.08);
+}
+
+html[data-theme="light"] .mobile-navigation {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 24px 60px rgba(28, 55, 80, 0.16);
+}
+
+/* Cards */
+
+html[data-theme="light"] .glass-card,
+html[data-theme="light"] .skill-card {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .organization-card,
+html[data-theme="light"] .publication-card,
+html[data-theme="light"] .skill-category-card,
+html[data-theme="light"] .volunteering-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(237, 246, 252, 0.94)
+        );
+    box-shadow: 0 14px 40px rgba(28, 55, 80, 0.08);
+}
+
+html[data-theme="light"] .project-card:hover,
+html[data-theme="light"] .organization-card:hover,
+html[data-theme="light"] .publication-card:hover,
+html[data-theme="light"] .skill-category-card:hover,
+html[data-theme="light"] .volunteering-card:hover {
+    border-color: rgba(8, 127, 168, 0.62);
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow:
+        0 24px 55px rgba(28, 55, 80, 0.15),
+        0 0 22px rgba(8, 127, 168, 0.15);
+}
+
+/* Profile */
+
+html[data-theme="light"] .profile-status {
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 30px rgba(28, 55, 80, 0.12);
+}
+
+html[data-theme="light"] .profile-photo-wrapper {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #dceefa,
+            #ffffff
+        );
+}
+
+/* Social icons */
+
+html[data-theme="light"] .social-icon {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+html[data-theme="light"] .social-icon::after {
+    background: #ffffff;
+}
+
+html[data-theme="light"] .social-icon.github {
+    color: #181717;
+}
+
+/* Skills */
+
+html[data-theme="light"] .skill-logo,
+html[data-theme="light"] .skill-category-icon {
+    background: rgba(8, 127, 168, 0.07);
+}
+
+html[data-theme="light"] .skill-progress {
+    background: rgba(15, 35, 55, 0.1);
+}
+
+/* Tags and publication details */
+
+html[data-theme="light"] .tag-list span {
+    color: var(--secondary-text);
+}
+
+html[data-theme="light"] .publication-details > div {
+    background: rgba(8, 127, 168, 0.035);
+}
+
+/* Project modal */
+
+html[data-theme="light"] .project-dialog {
+    background: #ffffff;
+    color: var(--primary-text);
+    box-shadow: 0 30px 100px rgba(20, 42, 63, 0.35);
+}
+
+html[data-theme="light"] .project-dialog::backdrop {
+    background: rgba(30, 48, 65, 0.55);
+}
+
+/* Cursor */
+
+html[data-theme="light"] .cursor-dot {
+    background: var(--accent);
+    box-shadow:
+        0 0 8px var(--accent),
+        0 0 16px rgba(8, 127, 168, 0.55);
+}
+
+html[data-theme="light"] .cursor-ring {
+    border-color: var(--accent);
+}
+
+/* Mobile theme button */
+
+@media (max-width: 1100px) {
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+    }
+
+    .brand {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+}

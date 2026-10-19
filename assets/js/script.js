@@ -40,6 +40,41 @@ const projects = [
         "https://bd-electricity-demand-forecast.streamlit.app/",
 
 },
+
+{
+    title: "ShopSphere — E-commerce Management System",
+    type: "FULL-STACK E-COMMERCE APPLICATION",
+    date: "October 2026",
+    role: "Full-Stack Developer",
+
+    description:
+        "A full-stack single-vendor e-commerce platform with a responsive storefront, protected admin dashboard, inventory control, verified payments and automated order fulfillment workflows.",
+
+    technologies: [
+        "Laravel 13",
+        "Next.js 16",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Laravel Sanctum",
+        "Tailwind CSS",
+        "SSLCommerz",
+        "Laravel Queue"
+    ],
+
+    details: [
+        "Built a responsive customer storefront with product search, product details, persistent cart, checkout and verified payment-status tracking.",
+        "Developed a protected admin dashboard for product CRUD, inventory adjustments, stock-movement history, orders, payments and delivery management.",
+        "Implemented transactional checkout and inventory reservation to prevent invalid prices, insufficient stock and inconsistent order data.",
+        "Integrated SSLCommerz sandbox with server-side callback verification, payment reconciliation and secure per-order status access.",
+        "Added asynchronous fulfillment using Laravel events, queued jobs and a mock CarryBee delivery adapter with retry support.",
+        "Used Laravel Sanctum and HttpOnly cookies to secure administrator authentication and server-side API communication.",
+        "Validated the backend with 104 passing feature and unit tests covering authentication, checkout, inventory, payments, order cancellation and delivery workflows."
+    ],
+
+    github:
+        "https://github.com/estkayon/Ecommerce-Management-System"
+},
     
     
     {
@@ -167,32 +202,6 @@ const projects = [
             "https://github.com/estkayon/Restaurant-Management-System"
     },
 
-    {
-        title: "Aircraft Visualization",
-        type: "COMPUTER GRAPHICS PROJECT",
-        date: "5 August 2024 – 15 August 2024",
-        role: "C++ and OpenGL Developer",
-
-        description:
-            "A multi-scene airport visualization featuring aircraft movement and dynamic environmental effects.",
-
-        technologies: [
-            "C++",
-            "OpenGL",
-            "Computer Graphics",
-            "Animation"
-        ],
-
-        details: [
-            "Designed a multi-scene airport animation with aircraft movement.",
-            "Implemented interactive camera controls.",
-            "Added weather effects and environmental changes.",
-            "Synchronized animation events across multiple scenes."
-        ],
-
-        github:
-            "https://github.com/estkayon/Visualization-of-Aircraft"
-    }
 ];
 
 /* =====================================================
@@ -742,7 +751,15 @@ const menuButton =
 const mobileNavigation =
     document.getElementById("mobile-navigation");
 
-menuButton.addEventListener("click", () => {
+function closeMobileNavigation() {
+    mobileNavigation.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("mobile-menu-open");
+}
+
+menuButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+
     const navigationIsOpen =
         mobileNavigation.classList.toggle("open");
 
@@ -750,22 +767,50 @@ menuButton.addEventListener("click", () => {
         "aria-expanded",
         String(navigationIsOpen)
     );
+
+    document.body.classList.toggle(
+        "mobile-menu-open",
+        navigationIsOpen
+    );
 });
 
 mobileNavigation
     .querySelectorAll("a")
     .forEach((link) => {
-        link.addEventListener("click", () => {
-            mobileNavigation.classList.remove(
-                "open"
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-        });
+        link.addEventListener(
+            "click",
+            closeMobileNavigation
+        );
     });
+
+document.addEventListener("click", (event) => {
+    const clickedOutsideMenu =
+        !mobileNavigation.contains(event.target) &&
+        !menuButton.contains(event.target);
+
+    if (
+        clickedOutsideMenu &&
+        mobileNavigation.classList.contains("open")
+    ) {
+        closeMobileNavigation();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (
+        event.key === "Escape" &&
+        mobileNavigation.classList.contains("open")
+    ) {
+        closeMobileNavigation();
+        menuButton.focus();
+    }
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1100) {
+        closeMobileNavigation();
+    }
+});
 
 /* =====================================================
    FIXED HEADER
@@ -1231,15 +1276,25 @@ function drawSpace() {
             Math.PI * 2
         );
 
+        const lightThemeActive =
+            document.documentElement.getAttribute(
+                "data-theme"
+            ) === "light";
+
+        const starRed = lightThemeActive ? 40 : 205;
+        const starGreen = lightThemeActive ? 105 : 230;
+        const starBlue = lightThemeActive ? 155 : 255;
+
+        const starOpacity = lightThemeActive
+            ? Math.max(0.08, pulseOpacity * 0.45)
+            : Math.max(0.08, pulseOpacity);
+
         spaceContext.fillStyle =
             `rgba(
-                205,
-                230,
-                255,
-                ${Math.max(
-                    0.08,
-                    pulseOpacity
-                )}
+                ${starRed},
+                ${starGreen},
+                ${starBlue},
+                ${starOpacity}
             )`;
 
         spaceContext.fill();
@@ -1501,3 +1556,74 @@ document.addEventListener(
     }
 );
 
+/* =====================================================
+   DARK AND LIGHT THEME
+   ===================================================== */
+
+const themeToggle =
+    document.getElementById("theme-toggle");
+
+const themeColorMeta =
+    document.querySelector(
+        'meta[name="theme-color"]'
+    );
+
+function getCurrentTheme() {
+    return document.documentElement.getAttribute(
+        "data-theme"
+    ) || "dark";
+}
+
+function updateThemeButton(theme) {
+    const isLightTheme = theme === "light";
+
+    const buttonText = isLightTheme
+        ? "Switch to dark theme"
+        : "Switch to light theme";
+
+    themeToggle.setAttribute(
+        "aria-label",
+        buttonText
+    );
+
+    themeToggle.setAttribute(
+        "title",
+        buttonText
+    );
+
+    if (themeColorMeta) {
+        themeColorMeta.setAttribute(
+            "content",
+            isLightTheme
+                ? "#f4f8fc"
+                : "#03050c"
+        );
+    }
+}
+
+function setPortfolioTheme(theme) {
+    document.documentElement.setAttribute(
+        "data-theme",
+        theme
+    );
+
+    localStorage.setItem(
+        "portfolio-theme",
+        theme
+    );
+
+    updateThemeButton(theme);
+}
+
+themeToggle.addEventListener("click", () => {
+    const currentTheme = getCurrentTheme();
+
+    const nextTheme =
+        currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+    setPortfolioTheme(nextTheme);
+});
+
+updateThemeButton(getCurrentTheme());

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,19 @@
     <title>
         Md. Estiak Rahman Ayon | Portfolio
     </title>
+
+    <script>
+        const savedTheme = localStorage.getItem("portfolio-theme");
+
+        if (savedTheme === "light") {
+            document.documentElement.setAttribute(
+                "data-theme",
+                "light"
+            );
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -67,6 +80,12 @@
             <a href="#contact" class="header-button interactive">
                 Let’s talk
             </a>
+
+            <button class="theme-toggle interactive" id="theme-toggle" type="button" aria-label="Switch to light theme"
+                title="Switch to light theme">
+                <i class="fa-solid fa-sun theme-sun"></i>
+                <i class="fa-solid fa-moon theme-moon"></i>
+            </button>
 
             <button class="menu-button interactive" id="menu-button" type="button" aria-label="Open navigation menu"
                 aria-expanded="false">
@@ -373,6 +392,15 @@
                         <p>0.8882 F1 and 0.9795 recall</p>
                     </div>
                 </div>
+
+
+                <div class="publication-github-wrapper">
+                    <a href="https://github.com/estkayon/BanglaCXR-Vision-Language-Report-Generation" target="_blank"
+                        rel="noopener noreferrer" class="publication-github-button interactive">
+                        <i class="fa-brands fa-github"></i>
+                        View GitHub Repository
+                    </a>
+                </div>
             </article>
         </section>
 
@@ -581,7 +609,7 @@
                             <span>View Details</span>
                         </button>
                     </article>
-                   
+
                     <article class="certificate-item interactive" aria-hidden="true">
                         <img src="assets/images/certificates/certificate-6.jpg" alt="">
 
@@ -675,11 +703,13 @@
 
                     <ul>
                         <li>
-                            Served as a dedicated member of the blood-donating organization "Prafulla," devoting utmost sincerity to the service of distressed humanity.
+                            Served as a dedicated member of the blood-donating organization "Prafulla," devoting utmost
+                            sincerity to the service of distressed humanity.
                         </li>
 
                         <li>
-                            Received a Certificate of Recognition for extraordinary contributions to collecting blood for critical patients and raising awareness about blood donation
+                            Received a Certificate of Recognition for extraordinary contributions to collecting blood
+                            for critical patients and raising awareness about blood donation
                         </li>
 
                     </ul>
@@ -809,9 +839,6 @@
             <img src="" alt="" id="certificate-lightbox-image">
         </div>
     </div>
-
-    <script src="assets/js/script.js"></script>
-
 
     <script src="assets/js/script.js"></script>
 </body>

@@ -12,22 +12,15 @@
 
 <br />
 
+
 ## About
 
-I'm **Md. Estiak Rahman Ayon**, a Computer Science and Engineering graduate from American International University-Bangladesh (AIUB). I work on AI/ML research and MLOps, with a focus on making models useful under real constraints: low-resource languages, limited compute and production pipelines that are easy to maintain.
+I'm **Md. Estiak Rahman Ayon**, a Computer Science and Engineering graduate from American International University-Bangladesh (AIUB). I work across AI/ML, MLOps and software engineering, with a focus on making models useful under real constraints: low-resource languages, limited compute and production pipelines that are easy to maintain. Alongside ML work, I build full-stack web applications, from backend logic to the interfaces people use.
 
 This repository holds my personal portfolio. It brings together my experience, projects, research, skills, education, certificates and volunteering in one place.
 
 <br />
 
-## Research
-
-| Work | Status |
-| :--- | :--- |
-| **BanglaCXR**<br />A two-stage vision-language pipeline for generating chest X-ray radiology reports in clinical Bangla, trained with 4-bit QLoRA on a single 8 GB GPU. Undergraduate thesis. | Manuscript in preparation |
-| **ClinAtt-X**<br />An intersample attention and XGBoost fusion framework for multi-disease clinical classification from structured medical records. | Submitted to ECCE |
-
-<br />
 
 ## Focus Areas
 

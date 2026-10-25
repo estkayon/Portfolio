@@ -158,6 +158,56 @@ const projects = [
 
     {
         id: 4,
+
+        image:
+            "assets/images/projects/priceradar.jpg",
+
+        title:
+            "PriceRadar: Commodity Price Anomaly Detection",
+
+        type:
+            "End-to-End MLOps Project",
+
+        date:
+            "October 2026",
+
+        role:
+            "Machine Learning and MLOps Engineer",
+
+        description:
+            "A commodity price anomaly detection and forecasting system that monitors six commodities across energy, metals and agriculture using real market data, statistical and ML-based detection, and a non-technical-friendly dashboard.",
+
+        technologies: [
+            "Python",
+            "Prophet",
+            "LightGBM",
+            "Scikit-learn",
+            "MLflow",
+            "Evidently",
+            "Streamlit",
+            "Plotly",
+            "yfinance",
+            "FRED API"
+        ],
+
+        details: [
+            "Collected 5 years of daily and monthly price data for Crude Oil, Natural Gas, Gold, Wheat, Rice and Sugar from Yahoo Finance, FRED API and NewsAPI.",
+
+            "Engineered 54 technical features and detected price anomalies using Z-Score and Isolation Forest methods with combined severity scoring.",
+
+            "Built forecasting pipelines with Prophet and LightGBM, with per-commodity accuracy tracking via MLflow and data quality monitoring via Evidently.",
+
+            "Designed a 5-page interactive Streamlit dashboard with plain-language labels and contextual explanations for non-technical users."
+        ],
+
+        github:
+            "https://github.com/estkayon/Commodity-Price-Anomaly-Detection",
+
+        liveDemo: null
+    },
+
+    {
+        id: 5,
         image:
             "assets/images/projects/sentiment-analysis.jpg",
 
@@ -204,7 +254,7 @@ const projects = [
     },
 
     {
-        id: 5,
+        id: 6,
         image:
             "assets/images/projects/vehicle-insurance.jpg",
 
@@ -251,7 +301,7 @@ const projects = [
     },
 
     {
-        id: 6,
+        id: 7,
 
         image:
             "assets/images/projects/inventory-management.jpg",
@@ -298,7 +348,7 @@ const projects = [
     },
 
     {
-        id: 7,
+        id: 8,
         image:
             "assets/images/projects/restaurant-management.jpg",
 

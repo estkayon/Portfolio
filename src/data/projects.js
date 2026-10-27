@@ -208,6 +208,56 @@ const projects = [
 
     {
         id: 5,
+
+        image:
+            "assets/images/projects/banglalaw.jpg",
+
+        title:
+            "BanglaLaw: AI-Powered Legal Information Assistant",
+
+        type:
+            "End-to-End RAG + MLOps Project",
+
+        date:
+            "October 2026",
+
+        role:
+            "Machine Learning and MLOps Engineer",
+
+        description:
+            "A bilingual legal information assistant that answers questions about Bangladeshi law in Bangla and English using RAG, with source citations from official government legislation scraped from bdlaws.minlaw.gov.bd.",
+
+        technologies: [
+            "Python",
+            "FastAPI",
+            "Streamlit",
+            "ChromaDB",
+            "LangChain",
+            "Groq API",
+            "Sentence Transformers",
+            "DVC",
+            "GitHub Actions",
+            "Ruff"
+        ],
+
+        details: [
+            "Built a custom scraper for bdlaws.minlaw.gov.bd with SHA-256 change detection and automated weekly re-scraping via GitHub Actions.",
+
+            "Designed a legal text chunker that splits by ধারা (section) boundaries instead of arbitrary token counts, preserving legal context integrity.",
+
+            "Implemented cross-lingual retrieval using multilingual MiniLM-L12-v2 embeddings (384d) with ChromaDB, enabling Bangla and English queries against a Bangla legal corpus.",
+
+            "Built a confidence-scored RAG pipeline with Groq LLM, bilingual prompt templates, automatic language detection, and a Streamlit chat UI with law category navigation and WhatsApp sharing."
+        ],
+
+        github:
+            "https://github.com/estkayon/BanglaLaw-Ai-Legal-Assistant",
+
+        liveDemo: null
+    },
+
+    {
+        id: 6,
         image:
             "assets/images/projects/sentiment-analysis.jpg",
 
@@ -254,7 +304,7 @@ const projects = [
     },
 
     {
-        id: 6,
+        id: 7,
         image:
             "assets/images/projects/vehicle-insurance.jpg",
 
@@ -301,7 +351,7 @@ const projects = [
     },
 
     {
-        id: 7,
+        id: 8,
 
         image:
             "assets/images/projects/inventory-management.jpg",
@@ -347,50 +397,6 @@ const projects = [
             "https://github.com/estkayon/Inventory-Management-System"
     },
 
-    {
-        id: 8,
-        image:
-            "assets/images/projects/restaurant-management.jpg",
-
-        title:
-            "Restaurant Management System",
-
-        type:
-            "Full-Stack Web Application",
-
-        date:
-            "1 December 2025 – 7 December 2025",
-
-        role:
-            "Full-Stack Developer",
-
-        description:
-            "A multi-role restaurant ordering and delivery platform for customers, riders and administrators.",
-
-        technologies: [
-            "PHP",
-            "MySQL",
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "AJAX"
-        ],
-
-        details: [
-            "Built a full-stack restaurant platform using PHP and MySQL.",
-
-            "Developed separate interfaces for administrators, customers and delivery riders.",
-
-            "Implemented authentication, menu management, shopping cart and order placement.",
-
-            "Used AJAX to provide dynamic updates.",
-
-            "Added delivery tracking and order-status management."
-        ],
-
-        github:
-            "https://github.com/estkayon/Restaurant-Management-System"
-    }
 ];
 
 export default projects;

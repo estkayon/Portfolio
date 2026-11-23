@@ -54,12 +54,12 @@ function CustomCursor() {
             dot.style.opacity = "1";
             ring.style.opacity = "1";
 
+            // The arrow tip sits 3px inside the SVG, so shift it onto the pointer
             dot.style.transform =
                 `translate(
-                    ${mouseX}px,
-                    ${mouseY}px
-                )
-                translate(-50%, -50%)`;
+                    ${mouseX - 3}px,
+                    ${mouseY - 3}px
+                )`;
         }
 
         function animateRing() {
@@ -98,6 +98,9 @@ function CustomCursor() {
                 ring.classList.add(
                     "cursor-hover"
                 );
+                dot.classList.add(
+                    "cursor-hover"
+                );
             }
         }
 
@@ -125,6 +128,9 @@ function CustomCursor() {
 
             if (!nextElement) {
                 ring.classList.remove(
+                    "cursor-hover"
+                );
+                dot.classList.remove(
                     "cursor-hover"
                 );
             }
@@ -203,9 +209,43 @@ function CustomCursor() {
         <>
             <div
                 ref={dotRef}
-                className="cursor-dot"
+                className="cursor-arrow"
                 aria-hidden="true"
-            />
+            >
+                {/* Fixed colors with a dark outer and white inner outline,
+                    so the arrow stays visible on both light and dark backgrounds */}
+                <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                >
+                    <path
+                        d="M3 3 L25 11.5 L14.2 14.2 L11.5 25 Z"
+                        stroke="#0b1220"
+                        strokeWidth="3.2"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M3 3 L25 11.5 L14.2 14.2 L11.5 25 Z"
+                        stroke="#ffffff"
+                        strokeWidth="1.4"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M3 3 L25 11.5 L14.2 14.2 Z"
+                        fill="#14b8a6"
+                    />
+                    <path
+                        d="M3 3 L14.2 14.2 L11.5 25 Z"
+                        fill="#0f766e"
+                    />
+                    <path
+                        d="M8.2 7.2 L16.4 10.6 L12.1 11.9 Z"
+                        fill="#5eead4"
+                    />
+                </svg>
+            </div>
 
             <div
                 ref={ringRef}

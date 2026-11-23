@@ -1,0 +1,27 @@
+name = "ayon-portfolio-chat"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://estkayon.github.io,http://localhost:5173"
+GEMINI_MODELS = "gemini-3.1-flash-lite,gemini-3.5-flash,gemini-3-flash-preview"
+FALLBACK_MODEL = "@cf/google/gemma-4-26b-a4b-it"
+
+[ai]
+binding = "AI"
+
+[[ratelimits]]
+name = "BURST_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 4
+  period = 10
+
+[[ratelimits]]
+name = "MINUTE_LIMITER"
+namespace_id = "1002"
+
+  [ratelimits.simple]
+  limit = 12
+  period = 60

@@ -1,3 +1,4 @@
+import ChatWidget from "./components/chat/ChatWidget";
 import CustomCursor from "./components/common/CustomCursor";
 import SpaceBackground from "./components/effects/SpaceBackground";
 
@@ -48,6 +49,7 @@ function App() {
             </main>
 
             <Footer />
+        <ChatWidget /> 
         </>
     );
 }
